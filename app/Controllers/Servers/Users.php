@@ -8,6 +8,9 @@ class Users extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $data = array(
+            'title' => 'Users || Bootcamp Javan'
+        );
+        return view('pages/users/index', $data);
     }
 }

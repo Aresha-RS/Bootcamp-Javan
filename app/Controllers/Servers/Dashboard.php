@@ -8,6 +8,9 @@ class Dashboard extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $data = array(
+            'title' => 'Dashboard Management System'
+        );
+        return view('pages/dashboard', $data);
     }
 }

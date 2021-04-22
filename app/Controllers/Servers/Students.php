@@ -8,6 +8,9 @@ class Students extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $data = array(
+            'title' => 'Students || Bootcamp Javan'
+        );
+        return view('pages/students/index', $data);
     }
 }
