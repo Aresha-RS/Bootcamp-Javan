@@ -35,6 +35,7 @@ $routes->get('/', 'Servers\Dashboard::index');
 $routes->get('/account/dashboard', 'Servers\Dashboard::index');
 $routes->get('/account/users', 'Servers\Users::index');
 $routes->get('/account/students', 'Servers\Students::index');
+$routes->get('/school/vacations', 'Servers\Vacations::index');
 
 /*
  * --------------------------------------------------------------------
