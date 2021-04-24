@@ -26,6 +26,10 @@ class Vacations extends BaseController
 
     public function created()
     {
+        $this->VacationsModel->save([
+            'kode' => $this->input->getPost("kode"),
+            'nama' => $this->input->getPost('nama')
+        ]);
     }
 
     public function view()

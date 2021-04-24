@@ -9,6 +9,7 @@
     <link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon.ico">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/font-awesome/css/all.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugins/datatable/dataTables.bootstrap4.min.css') ?>">
     <style>
         .form-control,
         .btn-square {
@@ -33,9 +34,6 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item <?= $segment == "dashboard" || $segment == ""  ? "active" : ""; ?>">
                         <a class="nav-link" href="/account/dashboard">Dashboard <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item <?= $segment == "users" ? "active" : ""; ?>">
-                        <a class="nav-link" href="/account/users"><i class="fas fa-users-cog"></i> Users</a>
                     </li>
                     <li class="nav-item <?= $segment == "vacations" ? "active" : ""; ?>">
                         <a class="nav-link" href="/school/vacations"><i class="fas fa-file-signature"></i> Vacations</a>
@@ -62,9 +60,12 @@
             <span class="text-muted">Bootcamp Javan @2021 || Recha Abriana Anggraini</span>
         </div>
     </footer>
-    <script src="<?= base_url('assets/js/jquery/jquery-3.5.1.slim.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery/jquery.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/bootstrap/bootstrap.bundle.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/bootstrap/bootstrap.min.js') ?>"></script>
+    <script src="<?= base_url('assets//plugins/datatable/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?= base_url('assets//plugins/datatable/dataTables.bootstrap4.min.js') ?>"></script>
+    <script src="<?= base_url('assets/sites/process.js') ?>"></script>
 </body>
 
 </html>
