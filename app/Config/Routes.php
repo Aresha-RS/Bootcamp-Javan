@@ -34,8 +34,18 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Servers\Dashboard::index');
 $routes->get('/account/dashboard', 'Servers\Dashboard::index');
 $routes->get('/account/users', 'Servers\Users::index');
+
 $routes->get('/account/students', 'Servers\Students::index');
+$routes->get('/school/students/fetch', 'Servers\Students::fetch');
+$routes->post('/school/students/created', 'Servers\Students::created');
+$routes->post('/school/students/updated', 'Servers\Students::updated');
+$routes->post('/school/students/deleted', 'Servers\Students::deleted');
+
 $routes->get('/school/vacations', 'Servers\Vacations::index');
+$routes->get('/school/vacations/fetch', 'Servers\Vacations::fetch');
+$routes->post('/school/vacations/created', 'Servers\Vacations::created');
+$routes->post('/school/vacations/updated', 'Servers\Vacations::updated');
+$routes->post('/school/vacations/deleted', 'Servers\Vacations::deleted');
 
 /*
  * --------------------------------------------------------------------

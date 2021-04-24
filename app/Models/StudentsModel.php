@@ -8,4 +8,11 @@ class StudentsModel extends Model
 {
     protected $table = 'students';
     protected $useTimeStamps = true;
+
+    public function getStudents()
+    {
+        return $this->db->table('students')
+            ->join('vacations', 'vacations.id=students.vacation_id')
+            ->get()->getResultArray();
+    }
 }

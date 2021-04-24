@@ -60,12 +60,6 @@
             <span class="text-muted">Bootcamp Javan @2021 || Recha Abriana Anggraini</span>
         </div>
     </footer>
-    <script src="<?= base_url('assets/js/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/bootstrap/bootstrap.bundle.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/bootstrap/bootstrap.min.js') ?>"></script>
-    <script src="<?= base_url('assets//plugins/datatable/jquery.dataTables.min.js') ?>"></script>
-    <script src="<?= base_url('assets//plugins/datatable/dataTables.bootstrap4.min.js') ?>"></script>
-    <script src="<?= base_url('assets/sites/process.js') ?>"></script>
 </body>
 
 </html>
