@@ -62,10 +62,21 @@ class Students extends BaseController
         }
     }
 
+    public function deleted()
+    {
+        $key = $this->input->getPost("id");
+        $process = $this->StudentsModel->where('id', $key)->delete();
+        if ($process) {
+            echo json_encode([
+                "success" => true,
+                "message" => "Success deleted students !"
+            ]);
+        }
+    }
+
     public function updated()
     {
         $key = $this->input->getPost("id");
-        $this->StudentsModel->protect(false);
         $data = [
             "nis" => $this->input->getPost("nis"),
             "nama" => $this->input->getPost("nama"),
@@ -76,11 +87,12 @@ class Students extends BaseController
             "alamat" => $this->input->getPost("alamat")
         ];
         if ($key != null && $key > 0) {
-            $process = $this->StudentsModel->update($key, $data);
+            $process = $this->StudentsModel->update($data, $key);
             if ($process) {
                 echo json_encode([
                     "success" => true,
-                    "message" => "Success updated student data !"
+                    "message" => "Success updated student data !",
+                    "data" => $data
                 ]);
             } else {
                 echo json_encode([
@@ -92,19 +104,6 @@ class Students extends BaseController
             echo json_encode([
                 "success" => false,
                 "message" => "Record or parameter not found !"
-            ]);
-        }
-    }
-
-    public function deleted()
-    {
-        $key = $this->input->getPost("id");
-        $this->StudentsModel->protect(false);
-        $process = $this->StudentsModel->where('id', $key)->delete();
-        if ($process) {
-            echo json_encode([
-                "success" => true,
-                "message" => "Success deleted students !"
             ]);
         }
     }

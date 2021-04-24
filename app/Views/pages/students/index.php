@@ -183,7 +183,7 @@
                             <span id="error-update" class="text-danger small"></span>
                         </div>
                         <div class="col-md-12">
-                            <button type="button" id="btn-update-students" class="btn btn-primary">Simpan</button>
+                            <button type="submit" id="btn-update-students" class="btn btn-primary">Simpan</button>
                             <button type="button" id="btn-update-close" class="btn btn-danger" data-dismiss="modal">Batal</button>
                         </div>
                     </div>

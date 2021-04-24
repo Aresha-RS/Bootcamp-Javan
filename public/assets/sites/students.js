@@ -202,8 +202,9 @@ App = {
         });
     },
     edit: function(params) {
-        let error = false;
         let self = this;
+        let error = false;
+
         let record = JSON.parse(unescape(params));
         $("#modal-edit-students").on("shown.bs.modal", function() {
             $("#edit-nama").val(record.nama);
@@ -216,14 +217,14 @@ App = {
         });
         $("#modal-edit-students").modal("show");
 
-        $("#btn-update-students").on("click", function() {
-
+        $("#btn-update-students").on("submit", function() {
+            let self = this;
             var nama = $("#edit-nama").val();
             var nis = $("#edit-nis").val();
             var email = $("#edit-email").val();
             var telepon = $("#edit-telepon").val();
             var alamat = $("#edit-alamat").val();
-            var jurusan = $("#edit-kejuruan").val();
+            var jurusan = $("#edit-kejuruan option").val();
             var kelas = $("#edit-kelas").val();
 
             if (nama == null || nama == undefined || nama == "") {
@@ -311,8 +312,6 @@ App = {
                 alamat: alamat
             }
 
-            console.log(parameter);
-
             if (!error) {
                 self.update(parameter);
             }
@@ -335,7 +334,7 @@ App = {
             },
             error: function(err) {
                 console.log(err);
-                alert("Failed to deleted students !");
+                alert("Failed to updated students !");
             }
         })
     },
