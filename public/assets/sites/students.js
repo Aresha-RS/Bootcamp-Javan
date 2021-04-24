@@ -202,9 +202,8 @@ App = {
         });
     },
     edit: function(params) {
-        let self = this;
         let error = false;
-
+        let self = this;
         let record = JSON.parse(unescape(params));
         $("#modal-edit-students").on("shown.bs.modal", function() {
             $("#edit-nama").val(record.nama);
@@ -214,17 +213,17 @@ App = {
             $("#edit-alamat").val(record.alamat);
             $("#edit-kejuruan").val(record.vacation_id);
             $("#edit-kelas").val(record.kelas);
+            $("#btn-update-students").attr("data-id", record.id);
         });
         $("#modal-edit-students").modal("show");
-
-        $("#btn-update-students").on("submit", function() {
-            let self = this;
+        $("#btn-update-students").on("click", function() {
+            var id = $("#btn-update-students").attr("data-id");
             var nama = $("#edit-nama").val();
             var nis = $("#edit-nis").val();
             var email = $("#edit-email").val();
             var telepon = $("#edit-telepon").val();
             var alamat = $("#edit-alamat").val();
-            var jurusan = $("#edit-kejuruan option").val();
+            var jurusan = $("#edit-kejuruan").val();
             var kelas = $("#edit-kelas").val();
 
             if (nama == null || nama == undefined || nama == "") {
@@ -302,7 +301,7 @@ App = {
             }
 
             var parameter = {
-                id: record.id,
+                id: id,
                 nis: nis,
                 nama: nama,
                 kelas: kelas,
@@ -336,13 +335,13 @@ App = {
                 console.log(err);
                 alert("Failed to updated students !");
             }
-        })
+        });
     },
     delete: function(params) {
         let self = this;
         let record = JSON.parse(unescape(params));
         $("#modal-delete-students").on("shown.bs.modal", function() {
-            $("#delete-students-title").text(record.description + " (" + record.name + ")");
+            $("#delete-students-title").text(record.nama);
         });
         $("#modal-delete-students").modal("show");
 

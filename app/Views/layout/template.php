@@ -60,6 +60,10 @@
             <span class="text-muted">Bootcamp Javan @2021 || Recha Abriana Anggraini</span>
         </div>
     </footer>
+    <script type="text/javascript">
+        App.baseUrl = "<?= site_url() ?>";
+        App.init();
+    </script>
 </body>
 
 </html>

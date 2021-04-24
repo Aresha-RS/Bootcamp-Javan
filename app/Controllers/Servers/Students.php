@@ -77,6 +77,7 @@ class Students extends BaseController
     public function updated()
     {
         $key = $this->input->getPost("id");
+        $this->StudentsModel->protect(false);
         $data = [
             "nis" => $this->input->getPost("nis"),
             "nama" => $this->input->getPost("nama"),
@@ -87,12 +88,11 @@ class Students extends BaseController
             "alamat" => $this->input->getPost("alamat")
         ];
         if ($key != null && $key > 0) {
-            $process = $this->StudentsModel->update($data, $key);
+            $process = $this->StudentsModel->update($key, $data);
             if ($process) {
                 echo json_encode([
                     "success" => true,
-                    "message" => "Success updated student data !",
-                    "data" => $data
+                    "message" => "Success updated student data !"
                 ]);
             } else {
                 echo json_encode([

@@ -130,8 +130,4 @@
 <script src="<?= base_url('assets//plugins/datatable/jquery.dataTables.min.js') ?>"></script>
 <script src="<?= base_url('assets//plugins/datatable/dataTables.bootstrap4.min.js') ?>"></script>
 <script src="<?= base_url('assets/sites/vacations.js') ?>"></script>
-<script type="text/javascript">
-    App.baseUrl = "<?= site_url() ?>";
-    App.init();
-</script>
 <?= $this->endSection() ?>

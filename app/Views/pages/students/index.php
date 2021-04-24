@@ -183,7 +183,7 @@
                             <span id="error-update" class="text-danger small"></span>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" id="btn-update-students" class="btn btn-primary">Simpan</button>
+                            <button type="button" id="btn-update-students" data-id="" class="btn btn-primary">Simpan</button>
                             <button type="button" id="btn-update-close" class="btn btn-danger" data-dismiss="modal">Batal</button>
                         </div>
                     </div>
@@ -223,8 +223,4 @@
 <script src="<?= base_url('assets//plugins/datatable/jquery.dataTables.min.js') ?>"></script>
 <script src="<?= base_url('assets//plugins/datatable/dataTables.bootstrap4.min.js') ?>"></script>
 <script src="<?= base_url('assets/sites/students.js') ?>"></script>
-<script type="text/javascript">
-    App.baseUrl = "<?= site_url() ?>";
-    App.init();
-</script>
 <?= $this->endSection() ?>

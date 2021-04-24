@@ -11,6 +11,7 @@ class StudentsModel extends Model
     public function getStudents()
     {
         return $this->db->table('students')
+            ->select("students.*, vacations.name")
             ->join('vacations', 'vacations.id=students.vacation_id')
             ->get()->getResultArray();
     }
